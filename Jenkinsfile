@@ -33,10 +33,9 @@ pipeline {
                 }
             }
             steps {
+                sh "export PATH=/root/.pyenv/shims:/root/.pyenv/bin:${PATH}"
                 sh 'echo $PATH'
-                sh 'ls /root/.pyenv/shims/'
-                sh "export PATH=/root/.pyenv/shims:${PATH}"
-                sh 'pyinstaller --onefile sources/add2vals.py'
+                sh '/root/.pyenv/shims/pyinstaller --onefile sources/add2vals.py'
             }
             post {
                 success {
