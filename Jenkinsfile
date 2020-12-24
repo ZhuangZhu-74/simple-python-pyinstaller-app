@@ -32,9 +32,12 @@ pipeline {
                     image 'cdrx/pyinstaller-linux:python2'
                 }
             }
-            steps {
+            environment {
                 sh "export PATH=/root/.pyenv/shims:/root/.pyenv/bin:${PATH}"
+            }
+            steps {
                 sh 'echo $PATH'
+                sh 'which pyinstaller'
                 sh '/root/.pyenv/shims/pyinstaller --onefile sources/add2vals.py'
             }
             post {
