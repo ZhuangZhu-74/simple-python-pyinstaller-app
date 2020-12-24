@@ -33,7 +33,7 @@ pipeline {
                 }
             }
             environment {
-                PATH=/root/.pyenv/shims:/root/.pyenv/bin:${PATH}
+                PATH="/root/.pyenv/shims:/root/.pyenv/bin:${PATH}"
             }
             steps {
                 sh 'echo $PATH'
